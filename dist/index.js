@@ -4,6 +4,7 @@ import { addPrompt } from './modules/add.js';
 import { listPrompts } from './modules/list.js';
 import { lintVault } from './modules/lint.js';
 import { testPrompt } from './modules/test.js';
+import { diffPrompts } from './modules/diff.js';
 const program = new Command();
 program
     .name('pv')
@@ -41,5 +42,11 @@ program
     .option('-m, --model <model>', 'Model to use', 'gpt-3.5-turbo')
     .action(async (id, options) => {
     await testPrompt(id, options.model);
+});
+program
+    .command('diff <id1> <id2>')
+    .description('Show diff between two prompt versions')
+    .action((id1, id2) => {
+    diffPrompts(id1, id2);
 });
 program.parse(process.argv);

@@ -42,36 +42,8 @@ pv lint    # run basic lint rules (length, tags, front-matter)
 | `pv list`              | List prompts stored in the vault             |
 | `pv lint`              | Enforce simple style rules                   |
 | `pv test <id>`        | Run the prompt through an LLM (requires API key) |
+| `pv diff <id1> <id2>` | Diff two prompt versions side-by-side |
 
 ## Environment
 
-Set your OpenAI key before using `pv test`:
-
-```bash
-export OPENAI_API_KEY="sk-..."
-```
-
-## File Format
-
-Prompts live as Markdown with YAML front-matter:
-
-```markdown
----
-id: 123e4567-e89b-12d3-a456-426614174000
-tags:
-  - translate
-  - fr
-created: 2024-02-20T12:00:00Z
----
-Translate the following text to French:
-{{text}}
-```
-
-## Roadmap
-
-* `pv test` – run prompts against any LLM connector & log results.
-* `pv diff` – side-by-side diff between prompt versions.
-* VSCode extension to browse & insert `.pv.md` files.
-
-––
-MIT License.
+Set your OpenAI key before using `
