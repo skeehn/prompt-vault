@@ -4,6 +4,7 @@ import { initVault } from './modules/init.js';
 import { addPrompt } from './modules/add.js';
 import { listPrompts } from './modules/list.js';
 import { lintVault } from './modules/lint.js';
+import { testPrompt } from './modules/test.js';
 
 const program = new Command();
 program
@@ -39,6 +40,14 @@ program
   .description('Lint prompts in the vault')
   .action(() => {
     lintVault();
+  });
+
+program
+  .command('test <id>')
+  .description('Test a prompt against a model')
+  .option('-m, --model <model>', 'Model to use', 'gpt-3.5-turbo')
+  .action(async (id: string, options: { model: string }) => {
+    await testPrompt(id, options.model);
   });
 
 program.parse(process.argv);

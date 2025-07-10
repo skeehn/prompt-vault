@@ -41,6 +41,15 @@ pv lint    # run basic lint rules (length, tags, front-matter)
 | `pv add <prompt>`      | Scaffold a new prompt with YAML metadata     |
 | `pv list`              | List prompts stored in the vault             |
 | `pv lint`              | Enforce simple style rules                   |
+| `pv test <id>`        | Run the prompt through an LLM (requires API key) |
+
+## Environment
+
+Set your OpenAI key before using `pv test`:
+
+```bash
+export OPENAI_API_KEY="sk-..."
+```
 
 ## File Format
 
