@@ -1,0 +1,56 @@
+{
+  "name": "promptvault-vscode",
+  "displayName": "PromptVault",
+  "description": "Browse and run PromptVault prompts inside VSCode sidebar",
+  "version": "0.1.0",
+  "publisher": "promptvault",
+  "engines": {
+    "vscode": "^1.86.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "promptVault",
+          "title": "PromptVault",
+          "icon": "resources/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "promptVault": [
+        {
+          "id": "promptVaultSidebar",
+          "name": "PromptVault"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "promptvault.refresh",
+        "title": "Refresh PromptVault"
+      },
+      {
+        "command": "promptvault.runPrompt",
+        "title": "Run Prompt"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p .",
+    "watch": "tsc -w -p .",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "typescript": "^5.3.2",
+    "vscode": "^1.1.44",
+    "vsce": "^3.12.1"
+  },
+  "dependencies": {}
+}
