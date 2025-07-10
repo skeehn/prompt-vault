@@ -4,6 +4,11 @@
   "description": "PromptVault CLI mini app (MVP)",
   "license": "MIT",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/promptvault/promptvault"
+  },
+  "keywords": ["prompt", "cli", "llm", "openai", "anthropic", "prompt-engineering"],
   "bin": {
     "pv": "./dist/index.js"
   },
